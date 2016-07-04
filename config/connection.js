@@ -13,7 +13,7 @@ connection.connect(function(err) {
 		return;
 	}
 
-	console.log('connected to the database as: ' + connection.threadId);
+	console.log('connected to the database thread ID: ' + connection.threadId);
 })
 
 module.exports = connection;
