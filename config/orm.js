@@ -19,6 +19,12 @@ var orm = {
         connection.query(queryString, [{burger_name: nameInput}, {id: idInput}], function(err, result) {
             cb(result);
         });
+    },
+    deleteOne: function(tableInput, idInput, cb) {
+        var queryString = 'DELETE FROM ' + tableInput + ' WHERE ?'
+        connection.query(queryString, {id: idInput}, function(err, result) {
+            cb(result);
+        });
     }
 };
 
