@@ -14,9 +14,9 @@ var orm = {
             cb(result);
         });
     },
-    updateOne: function(tableInput, nameInput, idInput, cb) {
-        var queryString = 'UPDATE ' + tableInput + ' SET ? WHERE ?'
-        connection.query(queryString, [{burger_name: nameInput}, {id: idInput}], function(err, result) {
+    updateOne: function(tableInput, idInput, cb) {
+        var queryString = 'UPDATE ' + tableInput + ' SET devoured = 1 WHERE ?'
+        connection.query(queryString, [{id: idInput}], function(err, result) {
             cb(result);
         });
     },
